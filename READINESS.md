@@ -113,3 +113,6 @@ What is not settled by this record (for the author)
   that module. The item "hermitian_exclusion / sigNeg_transposeForm_eq_one_iff" is compared as
   two declarations (statements 1 and 2), giving sixteen; drop one and re-run
   `tools/check_count.py` after editing the docstring count if fifteen is preferred.
+
+## 2026-10-22 · submission-form fix
+The registry's form rejected the first submission attempt: "source-based results need a formalizes, adapts, or independently-proves source" (all seven sources were `background`). Fixed by adding an `original-proof` source as the first entry (relationship `other`, author_endorsement `participated`, location README.md), the form used by the registered PALOMAR-2026-09-30-000024. Lean content unchanged (f195e1d0).
