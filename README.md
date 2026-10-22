@@ -111,7 +111,7 @@ the register's own matrices. Not compared but proved in the modules: the
 type `(n(n+1)/2, n(n−1)/2)` of `tr(X Xᵀ)` on `Herm_n(ℂ)` for every `n`
 (`transposeForm_signature`), the number-field link `Tr_{K/ℚ}(xy) =
 Σ_w x_w y_w + Σ_w 2 Re(x_w y_w)` over Mathlib's mixed embedding
-(`PlaceLink.lean`), the Schur-product law `X(xy) = X(x) ⊙ X(y)`, and
+(`ArithmeticLorentz/PlaceLink.lean`), the Schur-product law `X(xy) = X(x) ⊙ X(y)`, and
 `time_canonical'`, `boost_span'`, `phase_excluded'`, `hodge_exchange'`
 with the scaling `S = diag(1, 1, √2, √2)` that carries the arithmetic
 trace form `diag(1, 1, 2, −2)` to `η4` made explicit.

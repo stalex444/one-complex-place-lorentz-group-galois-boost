@@ -86,8 +86,8 @@ Further checks
 - `Solution.lean` is generated from the same statement text as `Challenge.lean` (each `sorry`
   replaced by `exact` of one proof-module theorem), so the compared statements are identical by
   construction; the kernel accepted every `exact`.
-- `formalization.yaml` validates against the registry's `formalization.schema.json` (dispatcher)
-  and `v0.4.schema.json` with 0 errors. The schema's `relationship` enum has no `uses`; the
+- `formalization.yaml` validates against the registry's dispatcher schema and its v0.4 schema
+  (mathlib-initiative/formalization.yaml) with 0 errors. The schema's `relationship` enum has no `uses`; the
   register entry PALOMAR-2026-09-30-000024 is listed as `builds-on` with the note "used as
   cited data".
 - Reviewer-facing text: no internal-process wording (swept for working-file names, run labels
