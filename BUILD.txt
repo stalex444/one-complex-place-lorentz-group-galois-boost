@@ -1,0 +1,126 @@
+arithmetic-lorentz -- kernel build record, 2026-10-22
+Toolchain: leanprover/lean4:v4.35.0-rc2
+Mathlib rev: 065356127b1dc0016f66b7283ce0ce2c4055aa55 (lake-manifest.json; no lake update)
+Lean content: commit f195e1d0 (this record, READINESS.md and SHA256SUMS.txt are the only files added after it)
+
+Build: lake build (defaultTargets ArithmeticLorentz, Challenge, Solution) -> exit 0
+  working tree, final Lean content:
+    Build completed successfully (8944 jobs).
+    warnings by file: 16 Challenge.lean (all `declaration uses sorry`, the compared placeholders);
+    no other file produces any warning or message (the proof modules were swept of the linter's
+    unused simp arguments and unreachable tactic alternatives; no statement changed)
+    error lines: 0
+  fresh clone of f195e1d0 with .lake/packages symlinked to the shared pinned packages, lake build
+  from scratch (every project module compiled): exit 0, Build completed successfully, 16 sorry
+  warnings in Challenge.lean, nothing else; wall clock 1 min 33 s
+
+#print axioms for the 16 compared declarations (lake env lean on a file containing `import Solution`
+and the 16 #print axioms commands):
+  'ArithmeticLorentz.sigNeg_transposeForm_eq_one_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.hermitian_exclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.infIsometry_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.placePreserving_isometry_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.traceB_boost' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.hsForm_boost_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.galoisConj_boost_galoisConj' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.traceB_phaseV_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.time_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.conj_P_iff_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.boost_span' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.phase_not_mem_so31' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.hodge_exchange' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.divide_iConj' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.divide_mul_flip' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'ArithmeticLorentz.holst_gamma_not_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+  (16/16 compared names; every line is exactly [propext, Classical.choice, Quot.sound])
+
+sorry count: Challenge.lean 16; all other .lean files 0
+native_decide (all files): 0; admit: 0; axiom declarations: 0
+Challenge.lean imports: Mathlib only (`grep -n import`: line 2, `public import Mathlib`; the other
+  hits are the words "import"/"imported" in the docstring). The definitions the statements use,
+  with the theorems their bodies use, are stated in the file between `-- BEGIN SHARED DEFINITIONS`
+  and `-- END SHARED DEFINITIONS`, byte-identical to the same block of ArithmeticLorentz/Defs.lean
+  (254 lines, 13340 bytes; tools/check_shared_block.py PASS), on which the proof modules are built.
+Solution.lean imports: Mathlib, ArithmeticLorentz.HermN, ArithmeticLorentz.Boost,
+  ArithmeticLorentz.RegisterBridge (closure: every module under ArithmeticLorentz/, all in this
+  repository)
+Statement match Challenge vs Solution, 16 compared theorems: Solution.lean is generated from the
+  same statement text as Challenge.lean (each `sorry` replaced by `exact` of one proof-module
+  theorem), so the statements are identical as source text by construction; tools/check_count.py
+  PASS (names, order and count agree across Challenge, Solution, comparator.json, the opening
+  docstring and formalization.yaml); the comparator below compares the kernel types.
+
+The registry's pipeline, replicated locally on a fresh clone of f195e1d0 (the stages of
+verify_submission.py: canonical-challenge, challenge-provenance, challenge-export, solution-export,
+comparator; macOS has no bubblewrap sandbox, hence --inadvisably-no-sandbox):
+  canonical-challenge: Challenge.lean compiled outside the Lake plan under the alias
+    PalomarCanonical065590315dc0eede53eb7009.Challenge with LEAN_PATH = toolchain lib + the nine
+    manifest packages' build directories only (no project build directory): 16 sorry warnings,
+    0 error lines; Challenge.olean, .olean.private, .olean.server, .ir published
+  challenge-provenance (lean --src-deps): 3 transitive sources, by origin {mathlib: 1, toolchain: 2}
+    (Init.lean twice, Mathlib.lean); untrusted sources: []
+  export targets (the registry's own primitive_targets + comparator_export_targets): 26 primitives
+    read from the toolchain's Lake/CLI/Check.lean; 49 targets = Quot, Quot.mk, Quot.lift, Quot.ind
+    + 16 theorem_names + 3 permitted axioms + 26 primitives
+  leanexport (lean4export 3.1.0): challenge.export 78,679,150 bytes; solution.export 277,254,614 bytes
+  lake comparator (toolchain v4.35.0-rc2):
+    submitted configuration (comparator.json), from the package root:
+      Running Lean default kernel on solution / Lean default kernel accepts the solution /
+      Your solution is okay!   exit=0   (30 s)
+    the registry's protected configuration (challenge_module = the alias, definition_names [],
+      external_kernels nanoda = bin/nanoda_bin, con-ron = bin/con-ron), from an empty judge directory:
+      con-ron: accepted 38944 declarations (--verified) / con-ron kernel accepts the solution /
+      nanoda kernel accepts the solution / Lean default kernel accepts the solution /
+      Your solution is okay!   exit=0   (46 s)
+
+Proof of each compared declaration in Solution.lean (`exact` of one theorem of the proof modules,
+namespace HermitianExclusion):
+  sigNeg_transposeForm_eq_one_iff <- sigNeg_transposeForm_eq_one_iff (HermN.lean)
+  hermitian_exclusion <- hermitian_exclusion (HermN.lean)
+  infIsometry_classification <- infIsometry_classification (Boost.lean)
+  placePreserving_isometry_classification <- placePreserving_isometry_classification (Boost.lean)
+  traceB_boost <- traceB_boost (Boost.lean)
+  hsForm_boost_ne <- hsForm_boost_ne (Boost.lean)
+  galoisConj_boost_galoisConj <- galoisConj_boost_galoisConj (Boost.lean)
+  traceB_phaseV_iff <- traceB_phaseV_iff (Boost.lean)
+  time_canonical <- time_canonical (RegisterBridge.lean)
+  conj_P_iff_orthogonal <- conj_P_iff_orthogonal (RegisterBridge.lean)
+  boost_span <- boost_span (RegisterBridge.lean)
+  phase_not_mem_so31 <- phase_not_mem_so31 (RegisterBridge.lean)
+  hodge_exchange <- hodge_exchange (RegisterBridge.lean)
+  divide_iConj <- divide_iConj (RegisterBridge.lean)
+  divide_mul_flip <- divide_mul_flip (RegisterBridge.lean)
+  holst_gamma_not_real <- holst_gamma_not_real (RegisterBridge.lean)
+
+Gates (both exit non-zero on failure; negative tests run on scratch copies):
+  tools/check_shared_block.py -> PASS; one byte changed in the Defs block -> FAIL, exit 1
+  tools/check_count.py -> PASS: 16 compared statements; Challenge.lean 487 lines, 29184 bytes;
+    one compared theorem renamed in the Challenge -> FAIL, exit 1
+formalization.yaml: validates against the registry's formalization.schema.json (dispatcher) and
+  v0.4.schema.json, 0 errors (jsonschema, 2026-10-22)
+
+FILES (sha256  lines  name) -- every shipped file except this record and SHA256SUMS.txt (which
+lists the same hashes)
+  14ed8dd19e2d0bed0e95bc14c047b247918a10a67fd59cfe592797c092953d0f     24  .github/workflows/palomar-preflight.yml
+  c14b0bd2a9533a6177683e29926f2e053b0db769736ad816adf1df752f7bb727      2  .gitignore
+  1efd91b50b5b17d6a24277e19328843c29c065bc8e22f5a79b52985225179d8d     43  ArithmeticLorentz.lean
+  d477155afef792f376ff59cc86c3bad05bf60ea274b26af023b63de6b9de7f12     74  ArithmeticLorentz/Arithmetic.lean
+  a9475ba826aad51c06d3b63dc93c474c1e406af2d9b52d9f3e82722d4524bbc5    605  ArithmeticLorentz/Boost.lean
+  a27edc387d128231dfe208580ce4bd0c9f7b3b69cfd327a207b5b7908f2b3a66    159  ArithmeticLorentz/Counting.lean
+  18f265e7b8e3662078b23684e26b61ee52ce82d947954d51f68589a798a0f4ce    269  ArithmeticLorentz/Defs.lean
+  64f53f851c3af7f17bf9ae1e5b769c025c232d2d4781caad35c8c6fe7c7d34aa    216  ArithmeticLorentz/HermN.lean
+  712d2bfa6c2f906fb9fbd879a320cde470c815ceb0f21fe0e2c4bec337de545e    254  ArithmeticLorentz/PlaceLink.lean
+  251020f5b44d279d99c28ede23288bb9a3f190cc4b1f4d41f333baddcfdfb82d    172  ArithmeticLorentz/Qubit.lean
+  30a8474a7c702d82e8c867c137ed889f59912b81fe9b0b30946a6c67e9652428    960  ArithmeticLorentz/RegisterBridge.lean
+  11f75b75075a6bcb6fc2b65f8608fd2bad39da612f037bdc69110a4c2d03962b    487  Challenge.lean
+  d32be532ae3b0129081943d5ba0140833d203720b69e21bc64c735160db351cb     21  LICENSE
+  c48cc006f448ab176e540760a8c0a3f68b7eefd72e82712e2d6846394c189250    115  READINESS.md
+  487bf2c7119c3976622d71d162cad95dfc2f0d095776c0d8bd5a30c2763fe304    246  README.md
+  8b6583db87778d9b1b1856225b4a02f118e457c63dc119160cca53153b556b31    116  Solution.lean
+  8ed50846bda3288f9b0a3300cb0ca63098d04d64fa8c2ff226395cf26cd7a2bc     27  comparator.json
+  2ed914c010b423cd946dfbf66df3e636db517506cc8d1c7d028813f6534cfe89    462  formalization.yaml
+  e21c7c8914fd139abca08deae393b668c3192e492bc7a9f245fc0e51799390ae    117  lake-manifest.json
+  f6dc06297c2b735643594bd6abf1cf22bcb83210f1787fcfe3a1eff6a5f5a708     17  lakefile.toml
+  8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a      1  lean-toolchain
+  2eb3031fcd6bfa6b0b9e84c5888b5611cd1a89452a01b715553fffc8da91ee3b     73  tools/check_count.py
+  3bb77e243163fb57189e2010fb19f28b99000199727fdfd0f54107efb1859fe0     47  tools/check_shared_block.py

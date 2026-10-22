@@ -199,9 +199,9 @@ sources:
 
 related_formalizations:
   - id: "Registered entry PALOMAR-2026-09-30-000024 (stalex444/pdt-hodge-lie-generation, commit e2d8dde)"
-    relationship: "uses"
+    relationship: "builds-on"
     note: >-
-      The register: eta = diag(1,1,1,-1,1,-1), the fifteen generators
+      USED AS CITED DATA (the schema has no "uses" value). The register: eta = diag(1,1,1,-1,1,-1), the fifteen generators
       L_ab = eta_b E_ab - eta_a E_ba, the bivector coordinates and the
       local Hodge star on the 0123 plane (its Challenge.lean, lines
       35-75), and the Hodge rotation, chirality, projectors, divide and

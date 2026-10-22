@@ -164,26 +164,26 @@ byte for byte between the lines `-- BEGIN SHARED DEFINITIONS` and
 opening docstring, `comparator.json`, `Solution.lean` and
 `formalization.yaml` agree (both exit non-zero on any mismatch).
 
-Proof modules, under `ArithmeticLorentz/` (namespace
+Proof modules (namespace
 `HermitianExclusion`, kept from the development they come from, whose
 first theorem is statement 2):
-- `Defs.lean` — the shared definitions.
-- `Counting.lean` — the place form `Σ x_i² + Σ 2 Re(z_j²)` on
+- `ArithmeticLorentz/Defs.lean` — the shared definitions.
+- `ArithmeticLorentz/Counting.lean` — the place form `Σ x_i² + Σ 2 Re(z_j²)` on
   `ℝ^{r₁} × ℂ^{r₂}` has type `(r₁ + r₂, r₂)`; the Born place form is
   positive definite (Mathlib's `sigPos`, `sigNeg`, Sylvester's law).
-- `Arithmetic.lean` — `n(n−1)/2 = 1 ↔ n = 2` and the shape arithmetic.
-- `Qubit.lean` — `Herm₂(ℂ)` through the place matrix: `tr(XY)`,
+- `ArithmeticLorentz/Arithmetic.lean` — `n(n−1)/2 = 1 ↔ n = 2` and the shape arithmetic.
+- `ArithmeticLorentz/Qubit.lean` — `Herm₂(ℂ)` through the place matrix: `tr(XY)`,
   `tr(XYᵀ)`, their difference `4 (Im z)²`, `X − Xᵀ = 2 Im(z) σ_y`, the
   types `(3, 1)` and `(4, 0)`, the Schur-product law.
-- `HermN.lean` — `tr(XXᵀ)` on `Herm_n(ℂ)` has type `(n(n+1)/2, n(n−1)/2)`;
+- `ArithmeticLorentz/HermN.lean` — `tr(XXᵀ)` on `Herm_n(ℂ)` has type `(n(n+1)/2, n(n−1)/2)`;
   statements 1, 2.
-- `PlaceLink.lean` — the trace and Born forms of any number field in
+- `ArithmeticLorentz/PlaceLink.lean` — the trace and Born forms of any number field in
   Mathlib's mixed-embedding coordinates; for `(r₁, r₂) = (2, 1)`,
   `Tr_{K/ℚ}(xy) = Re tr(XYᵀ)` and `Σ_φ φ(x) conj φ(y) = tr(XY)`.
-- `Boost.lean` — `iConj`, the boost and its flow, the two isometry
+- `ArithmeticLorentz/Boost.lean` — `iConj`, the boost and its flow, the two isometry
   results, time reversal, the classification, the polar phase;
   statements 3–8.
-- `RegisterBridge.lean` — the register's `so(3, 1)` and the bridge;
+- `ArithmeticLorentz/RegisterBridge.lean` — the register's `so(3, 1)` and the bridge;
   statements 9–16.
 
 ```
@@ -230,10 +230,11 @@ Mathematics and physics
 
 Formalizations
 - Mathlib, commit `065356127b1dc0016f66b7283ce0ce2c4055aa55`: D.
-  Loeffler, `LinearAlgebra/QuadraticForm/Signature.lean` (`sigPos`,
-  `sigNeg`, Sylvester's law); `NumberTheory/NumberField/Embeddings.lean`
-  and `CanonicalEmbedding/Basic.lean` (infinite places, the mixed
-  embedding).
+  Loeffler, `Mathlib/LinearAlgebra/QuadraticForm/Signature.lean`
+  (`sigPos`, `sigNeg`, Sylvester's law);
+  `Mathlib/NumberTheory/NumberField/InfinitePlace/Basic.lean` and
+  `Mathlib/NumberTheory/NumberField/CanonicalEmbedding/Basic.lean`
+  (infinite places, the mixed embedding).
 - Registered entry PALOMAR-2026-09-30-000024,
   `stalex444/pdt-hodge-lie-generation` @ `e2d8dde` (the register data,
   transcribed, not imported).
