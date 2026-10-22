@@ -80,7 +80,7 @@ project:
 
 classification:
   arxiv: ["math.RT", "math.NT", "math-ph", "gr-qc", "cs.LO"]
-  msc2020: ["11R04", "11E10", "22E43", "15A63", "83A05", "68V20"]
+  msc2020: ["11R04", "11E10", "22E43", "15A63", "83A05"]
 
 sources:
   - title: "On an Algebraic Generalization of the Quantum Mechanical Formalism"
@@ -215,6 +215,14 @@ related_formalizations:
       identities). That entry's sl(15) generation and response rigidity
       are not used.
 
+  - id: "Registered entry PALOMAR-2026-09-30-000035 (stalex444/pdt-metric-pfaffian-hodge-stabilizers, commit 0e436b9e3468e0393641d42fd37dfc9e3520ffbf)"
+    relationship: "background"
+    note: >-
+      Metric-Pfaffian stabilizers and fixed-Hodge field recovery (registered 2026-09-30):
+      proves that the fifteen generators used here are the full joint infinitesimal
+      symmetry of the register metric and the Pfaffian cubic. Cited so the reader knows
+      the generators are not a chosen list; no statement of this entry depends on it.
+    license: "MIT"
   - id: "Registered entry PALOMAR-2026-10-21-000012 (stalex444/pdt-hermite-signature-compositum)"
     relationship: "builds-on"
     note: >-

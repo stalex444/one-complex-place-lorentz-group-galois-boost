@@ -235,6 +235,7 @@ Formalizations
   `Mathlib/NumberTheory/NumberField/InfinitePlace/Basic.lean` and
   `Mathlib/NumberTheory/NumberField/CanonicalEmbedding/Basic.lean`
   (infinite places, the mixed embedding).
+- Registered entry PALOMAR-2026-09-30-000035, "Metric–Pfaffian Stabilizers and Fixed-Hodge Field Recovery" (stalex444/pdt-metric-pfaffian-hodge-stabilizers @ 0e436b9e): the fifteen generators are the full joint symmetry of the register metric and the Pfaffian cubic — background; no statement here depends on it.
 - Registered entry PALOMAR-2026-09-30-000024,
   `stalex444/pdt-hodge-lie-generation` @ `e2d8dde` (the register data,
   transcribed, not imported).
