@@ -1,0 +1,27 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ArithmeticLorentz.sigNeg_transposeForm_eq_one_iff",
+    "ArithmeticLorentz.hermitian_exclusion",
+    "ArithmeticLorentz.infIsometry_classification",
+    "ArithmeticLorentz.placePreserving_isometry_classification",
+    "ArithmeticLorentz.traceB_boost",
+    "ArithmeticLorentz.hsForm_boost_ne",
+    "ArithmeticLorentz.galoisConj_boost_galoisConj",
+    "ArithmeticLorentz.traceB_phaseV_iff",
+    "ArithmeticLorentz.time_canonical",
+    "ArithmeticLorentz.conj_P_iff_orthogonal",
+    "ArithmeticLorentz.boost_span",
+    "ArithmeticLorentz.phase_not_mem_so31",
+    "ArithmeticLorentz.hodge_exchange",
+    "ArithmeticLorentz.divide_iConj",
+    "ArithmeticLorentz.divide_mul_flip",
+    "ArithmeticLorentz.holst_gamma_not_real"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}
