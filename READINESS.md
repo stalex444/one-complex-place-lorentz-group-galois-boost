@@ -1,4 +1,4 @@
-# Readiness record — arithmetic-lorentz (2026-10-22)
+# Readiness record — one-complex-place-lorentz-group-galois-boost (2026-10-22)
 
 Each registry rule that has cost a rejection or a failed stage before, and how it was checked
 on this package. Commands are run from the package root; the Lean content is that of the first

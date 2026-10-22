@@ -1,4 +1,4 @@
-arithmetic-lorentz -- kernel build record, 2026-10-22
+one-complex-place-lorentz-group-galois-boost -- kernel build record, 2026-10-22
 Toolchain: leanprover/lean4:v4.35.0-rc2
 Mathlib rev: 065356127b1dc0016f66b7283ce0ce2c4055aa55 (lake-manifest.json; no lake update)
 Lean content: commit f195e1d0 (this record, READINESS.md and SHA256SUMS.txt are the only files added after it)
